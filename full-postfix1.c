@@ -240,7 +240,7 @@ void reset() //스택에 저장된 모든 값을 초기화시키는 함수
 	evalStackTop = -1; // evalStackTop에 -1 저장 (초기값)
 	evalResult = 0; //evalResult에 0 저장(초기값)
 }
-void evaluation() // 
+void evaluation() // 연산하는 함수
 {
 	int opr1, opr2, i; //정수형변수선언 
 
@@ -252,7 +252,7 @@ void evaluation() //
 	{
 		symbol = postfixExp[i]; //symbol에 postfixExp배열에 저장된 값을 저장
 		if(getToken(symbol) == operand) { //지정된 연산자 외에 다른 값이 입력됐을 때
-			evalPush(symbol - '0'); //
+			evalPush(symbol - '0'); //연산자 - 0을 evalStack에 Push
 		}
 		else {
 			opr2 = evalPop(); //opr2=evalPop() evalStack Pop하여 opr2에 저장 (제일 Top에 있던 값(가장 최근에입력받은 값) opr2에 저장)
